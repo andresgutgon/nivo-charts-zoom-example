@@ -1,10 +1,14 @@
 import { ResponsiveLine } from '@nivo/line'
 
 import { data } from './data'
-const LineChart = () => {
+type Props = {
+  zoom?: number
+}
+const LineChart = ({ zoom }: Props) => {
   return (
     <ResponsiveLine
       data={data}
+      zoom={zoom}
       margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
       xScale={{ type: 'point' }}
       yScale={{
@@ -68,5 +72,7 @@ const LineChart = () => {
     />
   )
 }
+
+LineChart.defaultProps = { zoom: 1 }
 
 export default LineChart

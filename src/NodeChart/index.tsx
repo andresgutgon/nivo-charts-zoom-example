@@ -4,7 +4,6 @@ import Button from '../components/Button'
 import LineChart from './LineChart'
 const zoomSelector = (s: any) => s.transform[2]
 const NodeChart = () => {
-  const [zoomable, setZoomable] = useState(false)
   const zoom = useStore(zoomSelector)
   const { zoomTo } = useReactFlow()
   const disabled = zoom === 1
@@ -17,11 +16,8 @@ const NodeChart = () => {
           }}
           disabled={disabled}
         >Reset zoom</Button>
-        <Button
-          onClick={() => setZoomable(!zoomable)}
-        >Toggle zoomable chart</Button>
       </div>
-      <LineChart />
+      <LineChart zoom={zoom} />
       <Handle type="target" position={Position.Top} id="a" />
     </div>
   )

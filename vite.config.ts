@@ -8,7 +8,8 @@ export default defineConfig({
     alias:{
       'react/jsx-runtime': 'react/jsx-runtime.js',
       '@nivo/core' : path.resolve(__dirname, '../nivo/packages/core/dist/nivo-core.es.js'),
-      '@nivo/line' : path.resolve(__dirname, '../nivo/packages/line/dist/nivo-line.es.js')
+      '@nivo/line' : path.resolve(__dirname, '../nivo/packages/line/dist/nivo-line.es.js'),
+      '@nivo/tooltip' : path.resolve(__dirname, '../nivo/packages/tooltip/dist/nivo-tooltip.es.js')
     },
   },
   plugins: [react()]
