@@ -1,15 +1,25 @@
+import { useState } from 'react'
 import { Handle, Position, useReactFlow, useStore } from 'react-flow-renderer'
 import Button from '../components/Button'
 import LineChart from './LineChart'
 const zoomSelector = (s: any) => s.transform[2]
 const NodeChart = () => {
+  const [zoomable, setZoomable] = useState(false)
   const zoom = useStore(zoomSelector)
- const { zoomTo } = useReactFlow()
+  const { zoomTo } = useReactFlow()
   const disabled = zoom === 1
   return (
     <div className='rounded border border-gray-100 p-4 w-[900px] h-[600px] flex flex-col justify-center'>
-      <div className='w-full flex justify-center'>
-        <Button onClick={() => zoomTo(1)} disabled={disabled}>Reset zoom</Button>
+      <div className='w-full flex justify-center space-x-2'>
+        <Button
+          onClick={() => {
+            zoomTo(1)
+          }}
+          disabled={disabled}
+        >Reset zoom</Button>
+        <Button
+          onClick={() => setZoomable(!zoomable)}
+        >Toggle zoomable chart</Button>
       </div>
       <LineChart />
       <Handle type="target" position={Position.Top} id="a" />

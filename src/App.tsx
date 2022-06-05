@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import type { ReactNode } from 'react'
-import ReactFlow, { MiniMap, Controls } from 'react-flow-renderer'
+import ReactFlow, { Controls } from 'react-flow-renderer'
 
 import NodeChart from './NodeChart'
 
@@ -44,7 +44,6 @@ function Canvas({ nodes, edges }: Props) {
       defaultNodes={nodes}
       defaultEdges={edges}
     >
-      <MiniMap />
       <Controls />
     </ReactFlow>
   )
