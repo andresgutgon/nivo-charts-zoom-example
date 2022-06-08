@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Handle, Position, useReactFlow, useStore } from 'react-flow-renderer'
 import Button from '../components/Button'
 import LineChart from './LineChart'

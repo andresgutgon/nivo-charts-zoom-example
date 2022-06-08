@@ -1,14 +1,14 @@
 import { ResponsiveLine } from '@nivo/line'
 
 import { data } from './data'
-type Props = {
-  zoom?: number
-}
-const LineChart = ({ zoom }: Props) => {
+const LineChart = () => {
   return (
     <ResponsiveLine
       data={data}
-      zoom={zoom}
+      debugMesh={true}
+      useMesh={true}
+      enableCrosshair={true}
+      crosshairType='x'
       margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
       xScale={{ type: 'point' }}
       yScale={{
@@ -42,7 +42,6 @@ const LineChart = ({ zoom }: Props) => {
       pointBorderWidth={2}
       pointBorderColor={{ from: 'serieColor' }}
       pointLabelYOffset={-12}
-      useMesh={true}
       legends={[
           {
               anchor: 'bottom-right',
